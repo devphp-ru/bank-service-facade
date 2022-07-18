@@ -26,4 +26,9 @@ class AccountServiceTest extends TestCase
     {
         $this->assertTrue($this->accountService->getLoan(1000));
     }
+
+    public function testSerCustomerBalance(): void
+    {
+        $this->assertTrue($this->accountService->setCustomerBalance(1, 1000));
+    }
 }
