@@ -23,6 +23,10 @@ class CustomerServiceTest extends TestCase
         return $customerId;
     }
 
+    /**
+     * @param int $customerId
+     * @depends testGetCustomerId
+     */
     public function testCheckIdCustomer(int $customerId): void
     {
         $customerService = new CustomerService();

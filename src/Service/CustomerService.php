@@ -10,4 +10,9 @@ class CustomerService
     {
         return ['id' => $sessionId];
     }
+
+    public function checkId(int $customerId): bool
+    {
+        return true;
+    }
 }
