@@ -14,10 +14,18 @@ class CustomerServiceTest extends TestCase
         $this->assertIsObject($customerService);
     }
 
-    public function testGetCustomerId(): void
+    public function testGetCustomerId(): int
     {
         $customerService = new CustomerService();
         $customerData = $customerService->getCustomer(1);
-        $this->assertSame(1, $customerData['id']);
+        $customerId = $customerData['id'];
+        $this->assertSame(1, $customerId);
+        return $customerId;
+    }
+
+    public function testCheckIdCustomer(int $customerId): void
+    {
+        $customerService = new CustomerService();
+        $this->assertTrue($customerService->checkId($customerId));
     }
 }
