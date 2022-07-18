@@ -24,7 +24,7 @@ class CustomerServiceTest extends TestCase
     public function testGetCustomerId(): int
     {
         $customerData = $this->customerService->getCustomer(1);
-        $customerId = $customerData['id'];
+        $customerId = (int)$customerData['id'];
         $this->assertSame(1, $customerId);
         return $customerId;
     }
