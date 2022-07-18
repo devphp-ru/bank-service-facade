@@ -6,5 +6,8 @@ namespace App\Service;
 
 class AccountService
 {
-    
+    public function getLoan(float $amount): bool
+    {
+        return true;
+    }
 }
