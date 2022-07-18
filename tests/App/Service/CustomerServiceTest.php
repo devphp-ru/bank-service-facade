@@ -8,16 +8,22 @@ use PHPUnit\Framework\TestCase;
 
 class CustomerServiceTest extends TestCase
 {
+    /** @var CustomerService $customerService */
+    public CustomerService $customerService;
+
+    public function setUp(): void
+    {
+        $this->customerService = new CustomerService();
+    }
+
     public function testCanCreateCustomerService(): void
     {
-        $customerService = new CustomerService();
-        $this->assertIsObject($customerService);
+        $this->assertIsObject($this->customerService);
     }
 
     public function testGetCustomerId(): int
     {
-        $customerService = new CustomerService();
-        $customerData = $customerService->getCustomer(1);
+        $customerData = $this->customerService->getCustomer(1);
         $customerId = $customerData['id'];
         $this->assertSame(1, $customerId);
         return $customerId;
