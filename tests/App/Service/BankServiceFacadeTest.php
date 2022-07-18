@@ -13,7 +13,11 @@ class BankServiceFacadeTest extends TestCase
 
     public function setUp(): void
     {
-        $this->bankServiceFacade = new BankServiceFacade();
+        $this->bankServiceFacade = new BankServiceFacade(
+            new CustomerService(),
+            new LoanService(),
+            new AccountService()
+        );
     }
 
     public function testCanBankServiceFacade(): void
