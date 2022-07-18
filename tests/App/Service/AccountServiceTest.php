@@ -21,4 +21,9 @@ class AccountServiceTest extends TestCase
         $this->assertIsObject($this->accountService);
         $this->assertInstanceOf(AccountService::class, $this->accountService);
     }
+
+    public function testGetLoan(): void
+    {
+        $this->assertTrue($this->accountService->getLoan(1000));
+    }
 }
