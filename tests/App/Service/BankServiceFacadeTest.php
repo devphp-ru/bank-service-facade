@@ -20,4 +20,9 @@ class BankServiceFacadeTest extends TestCase
     {
         $this->assertIsObject($this->bankServiceFacade);
     }
+
+    public function testBankServiceFacade(): void
+    {
+        $this->assertTrue($this->bankServiceFacade->getLoan(1, 1000));
+    }
 }
