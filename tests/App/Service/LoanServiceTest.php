@@ -8,9 +8,21 @@ use PHPUnit\Framework\TestCase;
 
 class LoanServiceTest extends TestCase
 {
+    /** @var LoanService $loanService */
+    public LoanService $loanService;
+
+    public function setUp(): void
+    {
+        $this->loanService = new LoanService();
+    }
+
     public function testCanCreateLoanService(): void
     {
-        $loanService = new LoanService();
-        $this->assertIsObject($loanService);
+        $this->assertIsObject($this->loanService);
+    }
+
+    public function testCheckCreditRating(): void
+    {
+        $this->assertTrue($this->loanService->checkCreditRating(1, 1000));
     }
 }
