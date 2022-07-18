@@ -30,6 +30,11 @@ class CustomerService
 
     public function checkId(int $customerId): bool
     {
-        return true;
+        $query = "SELECT id FROM {$this->tableName} WHERE id=:id LIMIT 1";
+        $result = $this->pdoBuilder
+            ->prepare($query)
+            ->execute([':id' => $customerId])
+            ->fetch();
+        return (bool)$result;
     }
 }

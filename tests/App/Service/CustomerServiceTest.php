@@ -37,5 +37,6 @@ class CustomerServiceTest extends TestCase
     {
         $customerService = new CustomerService();
         $this->assertTrue($customerService->checkId($customerId));
+        $this->assertFalse($customerService->checkId(5));
     }
 }
