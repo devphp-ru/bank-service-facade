@@ -10,14 +10,14 @@ class CustomerServiceTest extends TestCase
 {
     public function testCanCreateCustomerService(): void
     {
-        $customerService = new CustomerService(1);
+        $customerService = new CustomerService();
         $this->assertIsObject($customerService);
     }
 
     public function testGetCustomerId(): void
     {
-        $customerService = new CustomerService(1);
-        $customerData = $customerService->getCustomer();
+        $customerService = new CustomerService();
+        $customerData = $customerService->getCustomer(1);
         $this->assertSame(1, $customerData['id']);
     }
 }

@@ -6,5 +6,8 @@ namespace App\Service;
 
 class CustomerService
 {
-
+    public function getCustomer(int $sessionId): array
+    {
+        return ['id' => $sessionId];
+    }
 }
