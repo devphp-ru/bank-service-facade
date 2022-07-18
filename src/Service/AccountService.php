@@ -10,4 +10,9 @@ class AccountService
     {
         return true;
     }
+
+    public function setCustomerBalance(int $id, float $amount): bool
+    {
+        return true;
+    }
 }
